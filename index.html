@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/preloader.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.66/build/spline-viewer.js" ></script>
+    <title>one-page</title>
+</head>
+<body onLoad="carregar">
+    <!--Pre-loader-->
+    <div id="preloader">
+        <svg class="pl" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
+                    <stop offset="0%" stop-color="hsl(313,90%,55%)" />
+                    <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                </linearGradient>
+                <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="hsl(313,90%,55%)" />
+                    <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                </linearGradient>
+            </defs>
+            <circle class="pl__ring" cx="100" cy="100" r="82" fill="none" stroke="url(#pl-grad1)" stroke-width="36" stroke-dasharray="0 257 1 257" stroke-dashoffset="0.01" stroke-linecap="round" transform="rotate(-90,100,100)" />
+            <line class="pl__ball" stroke="url(#pl-grad2)" x1="100" y1="18" x2="100.01" y2="182" stroke-width="36" stroke-dasharray="1 165" stroke-linecap="round" />
+        </svg>
+    </div>
+    
+    <!-- cabeçario -->
+    <header id="inicio">
+            <a href="#inicio" ><img src="/img/oOc.png" alt="" id="cabeçario-img"></a>
+        <div id="cabeçario">
+            <a href="#inicio" class="cabeçario-l"><span data-i18n="inicio">Início</span></a>
+            <a href="#antes-sobre" class="cabeçario-l"><span data-i18n="Sobre mim">Sobre mim</span></a>
+            <a href="#linguagens" class="cabeçario-l"><span data-i18n="Linguagens">Linguagens</span></a>
+            <a href="#crs" class="cabeçario-l"><span data-i18n="Projetos">Projetos</span></a>
+        </div>
+            <button id="cabeçario-b" data-i18n="Contato">Contato</button>
+            <button id="modo-noturno-btn" onclick="alternarModoNoturno()">
+            <img id="dia" src="/img/sol.png" alt="Dia">
+            <img id="noturno" src="/img/lua.png" alt="Noite">
+            <button id="changeLanguage"><img src="/img/traduzir.png" alt="" id="traduzir-img"></button>
+        </button>
+    </header>
+
+    <!-- inicio -->
+    <div id="titulo">
+        <h1 data-i18n="titulo-1">Mostrando um pouco de tudo</h1>
+        <h2 data-i18n="titulo-1-baixo">e tudo de um pouco</h2>
+        <p class="descricao" data-i18n="titulo-1-desc">Um simples site para mostar os meus projetos</p>
+        <div id="area-tresd">
+            <div id="tresd">
+                
+                <spline-viewer url="https://prod.spline.design/hsnpC23nM3g3dvYA/scene.splinecode"></spline-viewer>
+            </div>
+        </div>
+    </div>
+
+    <!-- sobre mim -->
+    <div id="antes-sobre">
+        <div id="sobre">
+            <div id="sobre-img">
+                <img src="/img/oOc.png" alt="">
+            </div>
+            <div id="sobre-t">
+                <h2 data-i18n="prazer">Muito prazer</h2>
+                <p data-i18n="apresentação">Olá! Eu sou o Marcus, um jovem de 17 anos apaixonado pelo mundo da tecnologia. Desde cedo, desenvolvi uma grande curiosidade e fascínio por entender como as coisas funcionam, especialmente quando se trata de sistemas digitais. Meu objetivo é estudar e me tornar um especialista em desenvolvimento de sistemas. Estou determinado a fazer a diferença nesse campo, buscando constantemente aprimorar minhas habilidades e conhecimentos. Estou ansioso para deixar minha marca em um mundo cada vez mais digitalizado.</p>
+            </div>
+        </div>
+    </div>
+    <!-- linguagens -->
+    <div id="linguagens">
+        <div>
+        <h2 id="linguagens-text" data-i18n="Linguagens">Linguagens</h2>
+        </div>
+        <div class="linha-ling">
+            <div class="ling"><img src="/img/CSS.png" alt=""><p>CSS</p></div>
+            <div class="ling"><img src="/img/HTML.png" alt=""><p>HTML</p></div>
+            <div class="ling"><img src="/img/JS.png" alt=""><p>JavaScript</p></div>
+        </div>
+        <div class="linha-ling">
+            <div class="ling"><img src="/img/python.png" alt=""><p>Python</p></div>
+            <div class="ling"><img src="/img/java.png" alt="" ><p data-i18n="java">Java (aprendendo)</p></div>
+        </div>
+    </div>
+    <!-- projetos em carrossel -->
+    <div id="projetos">
+        <h2 id="projetos-text" data-i18n="Projetos">Projetos</h2>
+        <div id="crs" class="carrosel swiper mySwiper">
+            <div class="slide-cont">
+                <div class="swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <div>
+                                <img src="/img/hollow-knight.png" alt="" class="card-img" >
+                                </div>
+                                <div class="name">
+                                <h3 >Hollow Knight</h3>
+                                <p data-i18n="Hollow">"Hollow Knight" é um jogo de plataforma e ação desenvolvido e publicado pela Team Cherry, um estúdio independente sediado em Adelaide, Austrália. Lançado inicialmente em 2017, o jogo se destaca por sua jogabilidade desafiadora, visual impressionante e atmosfera envolvente.</p>
+                                <button id="button-h">acessar</button>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+    
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/celeste.png" alt="" class="card-img" >
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+                        
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/ori-and-the-will.png" alt="" class="card-img" >
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+                            
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/ori-the-blind.jpg" alt="" class="card-img" >
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+                            
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/hollow-knight.png" alt="" class="card-img" >
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+    
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/hollow-knight.png" alt="" class="card-img" >
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/hollow-knight.png" alt="" class="card-img" >
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/hollow-knight.png" alt="" class="card-img" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="imagem-cont">
+    
+                            
+                            <div class="card-imagem" onclick="oneclick()">
+                                <img src="/img/hollow-knight.png" alt="" class="card-img" >
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <p class="descricao" data-i18n="desc">clique na imagem para saber mais</p>
+    </div>
+
+    <footer>
+        <a href="mailto:marcusbike3@gmail.com">
+            <div class="item">
+                <p ><h4>Email</h4>blahblahblah</p>
+            </div>
+        </a>
+        <a href="tel:+5531989443302">
+            <div class="item">
+                <p ><h4>whatszap</h4>+55 (31)98944-3302</p>
+            </div>
+        </a>
+        <a href="https://github.com/Marcus-Vi">
+            <div class="item">
+                <p><h4>Github</h4>blahblah</p>            
+            </div>
+        </a>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/preloader.js"></script>
+<script src="https://weblate-cdn.com/a5ba5dc29f39498aa734528a54b50d0a/weblate.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next@21.6.6/dist/umd/i18next.min.js"></script>
+</html>
